@@ -46,7 +46,7 @@ io.on("connection", (socket) => {
 var commands = {
   //normal commands
   name:(victim,param)=>{
-    if (param == "" || param.length > config.namelimit || victim.statlocked) return;
+    if (param == "" || param.length > config.namelimit) return;
     if (victim.markup) {
       victim.public.name = markup(param, true);
       victim.public.dispname = markup(param);
@@ -438,5 +438,5 @@ function filtertext(tofilter){
 }
 
 function isPublicRoom(id) {
-  return id == "default" || id == "desanitize";
+  return id == "default";
 }
