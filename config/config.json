@@ -1,0 +1,8 @@
+{
+  "port":3000,
+  "godword":"",
+  "kingword":"",
+  "altlimit": 2,
+  "namelimit": 30,
+  "charlimit": 400
+}
