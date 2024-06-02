@@ -255,17 +255,6 @@ class user {
             if (logdata.name == undefined || logdata.room == undefined) logdata = { room: "default", name: "Anonymous" };
           (logdata.name == "" || logdata.name.length > config.namelimit || filtertext(logdata.name)) && (logdata.name = "Anonymous");
           logdata.name.replace(/ /g,"") == "" && (logdata.name = "Anonymous");
-            if (this.loggedin == false) {
-                else {
-                  clientslowmode.push(this.socket.IP);
-                  setTimeout(() => {
-                    for (var i = 0; i < clientslowmode.length; ++i)
-                      if (clientslowmode[i] == this.socket.IP) {
-                        clientslowmode.splice(i, 1);
-                        break;
-                      }
-                  }, config.altslowmode);
-                }
               //If not logged in, set up everything
                 this.loggedin = true;
                 this.public.name = markup(logdata.name, true);
