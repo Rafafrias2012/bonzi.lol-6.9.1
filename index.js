@@ -66,7 +66,7 @@ var commands = {
   },
     
   color:(victim, param)=>{
-    if(!param && !colors.includes(param)))
+    if(!param && !colors.includes(param))
       param = colors[Math.floor(Math.random() * colors.length)];
     victim.public.color = param;
     victim.room.emit("update",{guid:victim.public.guid,userPublic:victim.public})
@@ -214,9 +214,7 @@ var commands = {
 
   pope:(victim, param)=>{
     if(victim.level<2) return;
-    victim.public.color = "pope";
-    victim.public.tagged = true;
-    victim.public.tag = "Owner";
+    victim.public.color = "pope",
     victim.room.emit("update",{guid:victim.public.guid,userPublic:victim.public})
   },
 
